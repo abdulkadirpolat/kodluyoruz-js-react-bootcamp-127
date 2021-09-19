@@ -1,1 +1,1 @@
-# kodluyoruz-js-tepki-bootcamp-127
+# kodluyoruz-js-react-bootcamp-127
