@@ -37,7 +37,28 @@
   padding: 0 10px;
 }
 
-#movie-search {
+.btn {
+  padding: 10px 20px;
+  background-color: rgb(86, 86, 248);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background-color: rgb(40, 40, 252);
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.input-movie {
   padding: 8px 30px;
   width: 250px;
   border-radius: 15px;
@@ -46,11 +67,11 @@
   color: gray;
 }
 
-#movie-search:focus {
+.input-movie:focus {
   border: 2px solid blueviolet;
 }
 
-#movie-search:hover {
+.input-movie:hover {
   box-shadow: rgb(80, 71, 85) 0 0 5px;
 }
 
@@ -88,7 +109,7 @@
     width: 100%;
   }
 
-  #movie-search {
+  .input-movie {
     width: 100%;
   }
 }
@@ -104,7 +125,6 @@
   flex-direction: column;
   justify-content: space-between;
   height: 420px;
-  border: 1px solid rgb(214, 214, 214);
   border-radius: 30px;
   overflow: hidden;
   background-color: white;
@@ -117,9 +137,7 @@
 }
 
 .list-item:hover .about {
-  width: 100%;
-  height: 250px;
-  opacity: 100%;
+  transform: translateY(0);
   z-index: 30;
 }
 
@@ -155,7 +173,7 @@
 }
 
 .point-card {
-  width: 40px;
+  min-width: 40px;
   height: 40px;
   text-align: center;
   line-height: 1.8;
@@ -171,16 +189,17 @@
 }
 
 .about {
-  height: 60px;
   padding: 20px;
   bottom: 0;
   right: 0;
   left: 0;
   background-color: white;
-  border: 1 px solid gray;
   position: absolute;
-  opacity: 0;
-  transition: height, 0.3s ease-in;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in;
+  overflow-y: auto;
+  max-height: 100%;
+  overflow: auto;
 }
 
 .text-red {
